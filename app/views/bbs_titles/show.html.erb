@@ -1,0 +1,7 @@
+<h3><%= @bbs_title.title%></h3>
+<%= attachment_image_tag @bbs_title, :image %>
+<p><%= @bbs_title.user.name %>さんの投稿</p>
+<p><%= @bbs_title.created_at.strftime('%Y/%m/%d') %>に投稿されました！</p>
+<% if @bbs_title.user == current_user %>
+ <%= button_to "削除", bbs_title_path(@bbs_title), method: :delete %>
+<% end %>

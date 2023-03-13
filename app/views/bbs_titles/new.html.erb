@@ -1,0 +1,8 @@
+<h1>掲示板を投稿する</h1>
+<%= form_with model: @bbs_title, local:true do |f| %>
+ <h4>掲示板タイトル</h4>
+ <%= f.text_field :title %>
+ <h4>付属画像</h4>
+ <%= f.attachment_field :image %>
+ <%= f.submit"投稿する" %>
+<% end %>

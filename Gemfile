@@ -76,3 +76,6 @@ gem 'rubocop-rails', require: false
 gem 'devise'
 gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
+group :development, :test do
+  gem 'pry-rails'
+end

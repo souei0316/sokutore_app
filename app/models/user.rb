@@ -6,4 +6,5 @@ class User < ApplicationRecord
   
   has_many :bbs_titles, dependent: :destroy
   has_many :bbs_comments, dependent: :destroy
+  attachment :profile_image
 end

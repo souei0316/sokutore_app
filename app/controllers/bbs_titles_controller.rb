@@ -17,6 +17,7 @@ class BbsTitlesController < ApplicationController
 
   def show
      @bbs_title = BbsTitle.find(params[:id])
+     @bbs_comment = BbsComment.new
   end
 
   def destroy

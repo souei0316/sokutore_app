@@ -7,3 +7,17 @@
     <%= button_to "削除", bbs_title_path(@bbs_title), method: :delete %>
   <% end %>
 </div>
+<p>
+ <%= @bbs_title.bbs_comments.count %>件のコメント<br>
+ <% @bbs_title.bbs_comments.each do |bbs_comment| %><br>
+  <%= bbs_comment.comment %>
+  <%= bbs_comment.user.name %>
+  <%= bbs_comment.created_at.strftime('%Y/%m/%d') %><% if bbs_comment.user == current_user %>
+     <%= button_to "削除", bbs_title_bbs_comment_path(bbs_comment.bbs_title, bbs_comment), method: :delete %></p>
+   <% end %>
+ <% end %>
+</p>
+<%= form_with(model:[@bbs_title,@bbs_comment], local:true) do |f| %>
+<%= f.text_area :comment, rows:'5', placeholder:"コメントを書く" %>
+<%= f.submit "送信する" %>
+<% end %>

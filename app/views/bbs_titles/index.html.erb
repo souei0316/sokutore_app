@@ -1,0 +1,12 @@
+<% @bbs_titles.each do |bbs_title| %>
+<div>
+  <%= link_to bbs_title_path(bbs_title.id) do %>
+   <%= attachment_image_tag bbs_title, :image %>
+  <% end %>
+  <p>タイトル<%= bbs_title.title %></p>
+  <p><%= bbs_title.user.name %>さんの投稿</p>
+  <% if bbs_title.user == current_user %>
+   <%= button_to "削除", bbs_title_path(bbs_title), method: :delete %>
+  <% end %>
+</div>
+<% end %>

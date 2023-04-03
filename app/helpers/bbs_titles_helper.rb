@@ -1,0 +1,2 @@
+module BbsTitlesHelper
+end

@@ -1,0 +1,11 @@
+<h2>トレーニング編集</h2>
+<% if current_user.id == 1 %>
+<%= form_with model:@training, local:true do |f| %>
+  <%= f.text_field :content %>
+  <%= f.text_field :title %>
+    <%= f.attachment_field :image %>
+  <%= f.submit "変更を保存" %>
+<% end %>
+<% else %>
+権限がありません。
+<% end %>

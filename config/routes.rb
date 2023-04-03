@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   end
   resources :users, only: [:show,:edit, :update]
   post '/homes/guest_sign_in', to: 'homes#guest_sign_in'
+  resources :trainings, only: [:new, :create, :index, :show, :edit, :update]
 end

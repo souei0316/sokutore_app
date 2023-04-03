@@ -1,6 +1,7 @@
 class HomesController < ApplicationController
   def top
     @users = User.all
+    @trainings = Training.all 
   end
   
   def guest_sign_in

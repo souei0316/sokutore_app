@@ -1,0 +1,10 @@
+<% @trainings.each do |training| %>
+<div>
+  <%= attachment_image_tag training, :image %>
+  <p>トレーニング名<%= training.title %></p>
+  <p>説明<%= training.content %></p>
+</div>
+<% if current_user.id == 1 %>
+    <p><%= link_to "編集", edit_training_path(training) %></p>
+  <% end %>
+<% end %>

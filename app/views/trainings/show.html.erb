@@ -1,0 +1,8 @@
+<% @random.each do |training| %>
+  <%= training.title %>
+  <%= training.content %>
+  <%= attachment_image_tag training, :image %>
+<% end %>
+
+<%= link_to "できなかった方はもう一度頑張りましょう！", root_path %>
+<%= %>

@@ -8,4 +8,5 @@ Rails.application.routes.draw do
     resources :bbs_comments, only: [:create, :destroy]
   end
   resources :users, only: [:show,:edit, :update]
+  post '/homes/guest_sign_in', to: 'homes#guest_sign_in'
 end

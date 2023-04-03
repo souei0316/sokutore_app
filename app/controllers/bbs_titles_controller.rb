@@ -7,8 +7,11 @@ class BbsTitlesController < ApplicationController
   def create
     @bbs_title = BbsTitle.new(bbs_title_params)
     @bbs_title.user_id = current_user.id
-    @bbs_title.save
-    redirect_to bbs_title_path(@bbs_title)
+    if @bbs_title.save
+    redirect_to bbs_titles_path
+    else
+    redirect_to new_bbs_title_path
+    end
   end
 
   def index

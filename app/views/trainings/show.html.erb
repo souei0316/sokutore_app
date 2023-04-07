@@ -1,8 +1,17 @@
-<% @random.each do |training| %>
-  <%= training.title %>
-  <%= training.content %>
-  <%= attachment_image_tag training, :image %>
-<% end %>
 
-<%= link_to "できなかった方はもう一度頑張りましょう！", root_path %>
-<%= %>
+      <% @random.each do |training| %>
+      <div class="training-image">
+       <%= attachment_image_tag training, :image %>
+      </div>
+      <br>
+       <h3 class=" training"><%= training.title %></h3><br>
+       <div class="training-menu">
+         <%= training.content %>
+       </div>
+
+      <% end %>
+      <div class="training-btn">
+       <%= link_to "できなかったのでもう一度頑張る！！", root_path,class:"btn btn-danger" %>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       <%= link_to "できた！！", training_columns_index_path,class:"btn btn-success" %>
+      </div>

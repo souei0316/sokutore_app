@@ -1,12 +1,45 @@
+<table class="table table-striped">
+ <thead>
+  <tr>
+   <th>
+    <%= link_to "掲示板に投稿する！", new_bbs_title_path %>
+   </th>
+  </tr>
+ </thead>
+ <tbody>
+  <% @bbs_titles.each do |bbs_title| %>
+  <tr>
+   <th>
+    <%= link_to bbs_title_path(bbs_title.id) do %>
+    <div class="bbs-image">
+     <%= attachment_image_tag bbs_title, :image %>
+    </div>
+   <% end %>
+  </th>
+  <th>
+   <%= bbs_title.title %>
+  </th>
+  <th>
+   <%= bbs_title.user.name %>さんの投稿
+  </th>
+  <th>
+    <% if bbs_title.user == current_user %>
+    <%= button_to "削除", bbs_title_path(bbs_title), method: :delete %>
+    <% end %>
+   </th>
+  </tr>
+  <% end %>
+ </tbody>
+</table>
 <% @bbs_titles.each do |bbs_title| %>
-<div>
   <%= link_to bbs_title_path(bbs_title.id) do %>
+  <div class="bbs-image">
    <%= attachment_image_tag bbs_title, :image %>
+  </div>
   <% end %>
   <p>タイトル<%= bbs_title.title %></p>
   <p><%= bbs_title.user.name %>さんの投稿</p>
   <% if bbs_title.user == current_user %>
    <%= button_to "削除", bbs_title_path(bbs_title), method: :delete %>
   <% end %>
-</div>
 <% end %>

@@ -1,0 +1,10 @@
+<div class="training-clear">
+ トレーニングお疲れ様でした！素晴らしいです！！<br>
+ まだまだトレーニングできそうな方は、トップページからチャレンジしてみてくださいね！<br>
+</div>
+<div class="training-column">
+ <h4>筋トレ豆知識</h4>
+ <% @random.each do |trainingcolumn| %>
+ <%= trainingcolumn.content %>
+<% end %>  
+</div>

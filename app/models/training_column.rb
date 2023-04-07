@@ -1,0 +1,2 @@
+class TrainingColumn < ApplicationRecord
+end

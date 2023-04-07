@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'training_columns/index'
   get 'users/show'
   get 'bbs_comments/create'
   get 'bbs_comments/destroy'

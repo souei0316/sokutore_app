@@ -1,14 +1,32 @@
-<h1> <%= @user.name %>さんのマイページ</h1>
-<%= attachment_image_tag @user, :profile_image, :size =>'120x100', fallback: "no_image.jpg"%>
-<% if @user.id == current_user.id %>
-    <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
+<div class="mypage">
+ <h2>
+  <%= @user.name %>さんのマイページ<br><br>
+  </h2>
+  <%= attachment_image_tag @user, :profile_image, :size =>'400x300', fallback: "no_image.jpg" %><br><br>
+  <% if @user.id == current_user.id %>
+   <%= link_to "プロフィール編集", edit_user_path(@user),class:"btn btn-success" %><br><br><br>
   <% end %>
-<h4>投稿した掲示板タイトル</h4>
-<p><% @bbs_titles.each do |bbs_title| %>
- <%= link_to bbs_title_path(bbs_title.id) do %>
-  <%= attachment_image_tag bbs_title, :image %>
-  <%= bbs_title.title %>
- <% end %>
- </p>
+
+<table class="table table-striped bbs-table">
+ <thead>
+  <tr>
+   <h3>投稿した掲示板タイトル</h3>
+  </tr>
+ </thead>
+ <tbody>
+  <% @bbs_titles.each do |bbs_title| %>
+  <tr>
+   <th>
+    <%= link_to bbs_title_path(bbs_title.id) do %>
+     <%= attachment_image_tag bbs_title, :image, fallback: "no_image.jpg" %>
+   </th>
+   <th>
+     <%= bbs_title.title %>
+    <% end %>
+   <% end %>
+   </th>
+  </tr>
+ </tbody>
+</table><br>
  <%= paginate @bbs_titles %>
-<% end %>
+</div>

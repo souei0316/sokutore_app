@@ -1,45 +1,70 @@
-<table class="table table-striped">
+<div class="bbs-introduction">
+ <h2>
+  即トレ！掲示板へようこそ！ここでは筋トレに関するお悩みを他のユーザに気軽に相談ができます。<br>
+  筋トレの疑問がある方はぜひ気軽に投稿してみてくださいね！！<br><br>
+   <h3>
+      <%= link_to "掲示板に投稿する！", new_bbs_title_path, class:"btn btn-success btn-lg" %>
+    </h3>
+ </h2>
+</div>
+<div class="bbs-table bbs-titles">
+ <table class="table table-striped">
  <thead>
   <tr>
    <th>
-    <%= link_to "掲示板に投稿する！", new_bbs_title_path %>
+   </th>
+   <th>
+    <h4>
+     タイトル
+    </h4>
+   </th>
+   <th>
+    <h4>
+     投稿者
+    </h4>
+   </th>
+   <th>
    </th>
   </tr>
  </thead>
  <tbody>
   <% @bbs_titles.each do |bbs_title| %>
   <tr>
-   <th>
+   <th width="500px">
     <%= link_to bbs_title_path(bbs_title.id) do %>
     <div class="bbs-image">
-     <%= attachment_image_tag bbs_title, :image %>
+     <%= attachment_image_tag bbs_title, :image, fallback: "no_image.jpg" %>
     </div>
    <% end %>
   </th>
-  <th>
-   <%= bbs_title.title %>
+  <th width>
+   <h5>
+    <%= link_to bbs_title_path(bbs_title.id) do %>
+    <%= bbs_title.title %>
+   <% end %>
+   </h5>
+  </th>
+  <th width="200px">
+   <h6>
+    <%= bbs_title.user.name %>さん
+   </h6>
   </th>
   <th>
-   <%= bbs_title.user.name %>さんの投稿
-  </th>
-  <th>
+   <h6>
     <% if bbs_title.user == current_user %>
-    <%= button_to "削除", bbs_title_path(bbs_title), method: :delete %>
+     <%= button_to "削除", bbs_title_path(bbs_title), method: :delete, class:"btn btn-danger" %>
+    <% else %>
+     <%= bbs_title.created_at.strftime('%Y/%m/%d') %>
     <% end %>
+   </h6>
    </th>
   </tr>
   <% end %>
  </tbody>
 </table>
-<% @bbs_titles.each do |bbs_title| %>
-  <%= link_to bbs_title_path(bbs_title.id) do %>
-  <div class="bbs-image">
-   <%= attachment_image_tag bbs_title, :image %>
-  </div>
-  <% end %>
-  <p>タイトル<%= bbs_title.title %></p>
-  <p><%= bbs_title.user.name %>さんの投稿</p>
-  <% if bbs_title.user == current_user %>
-   <%= button_to "削除", bbs_title_path(bbs_title), method: :delete %>
-  <% end %>
-<% end %>
+<div class="paginate">
+ <%= paginate @bbs_titles %>
+</div>
+
+</div>
+

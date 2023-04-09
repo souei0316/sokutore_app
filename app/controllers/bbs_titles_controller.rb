@@ -15,7 +15,7 @@ class BbsTitlesController < ApplicationController
   end
 
   def index
-    @bbs_titles = BbsTitle.all
+    @bbs_titles = BbsTitle.order(updated_at: :desc).page(params[:page])
   end
 
   def show

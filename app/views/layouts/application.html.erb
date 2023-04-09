@@ -19,18 +19,18 @@
         <div class="nav-item nav-link"><%= link_to '掲示板へ', bbs_titles_path, class:"link" %></div>
         <div class="nav-item nav-link"><%= link_to 'マイページ', user_path(current_user.id), class:"link" %></div>
         <div class="nav-item nav-link button"><%= button_to "ログアウト", destroy_user_session_path, method: :delete, class:"link" %></div>
-        <div class="nav-item nav-link button"><%= button_to 'ゲストログイン（閲覧用）', homes_guest_sign_in_path, method: :post, class:"link" %></div>
        <% else %>
         <div class="nav-item nav-link"><%= link_to"トップページ", root_path, class:"link" %></div>
         <div class="nav-item nav-link"><%= link_to "新規登録", new_user_registration_path, class:"link" %></div>
-        <div class="nav-item nav-link"><%= link_to "ログイン", new_user_session_path, class:"link" %></div>
+        <div class="nav-item nav-link"><%= link_to "ログイン", new_user_session_path, class:"link" %></div> 
+        <div class="nav-item nav-link button"><%= button_to 'ゲストログイン（閲覧用）', homes_guest_sign_in_path, method: :post, class:"link" %></div>
        <% end %>
       </div>
     </div>
   </nav>
   <%= yield %>
   <footer>
-    <p class="text-muted"><a href="https://twitter.com/simada0316"><font color="white">製作者のツイッターはこちらから</font></a></p>
+    <div class="fixed-bottom" style="height:60px; margin-top:50px; background-color:grey; text-align:center; padding:20px;"><a href="https://twitter.com/simada0316"><font color="white">製作者のツイッターはこちらから</font></a></p>
   </footer>
   </body>
 </html>

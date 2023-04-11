@@ -5,5 +5,5 @@ class BbsTitle < ApplicationRecord
   has_many :bbs_comments, dependent: :destroy
   
   validates :title, presence: true
-
+  validates :title, length: { maximum: 30 }
 end

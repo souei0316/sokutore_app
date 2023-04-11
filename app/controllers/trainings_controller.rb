@@ -14,7 +14,7 @@ class TrainingsController < ApplicationController
   end
   
   def index
-    @trainings = Training.all
+    @trainings = Training.order(updated_at: :desc).page(params[:page])
   end
   
   def edit
@@ -24,7 +24,7 @@ class TrainingsController < ApplicationController
   def update
     @training = Training.find(params[:id])
     @training.update(training_params)
-    redirect_to training_path(@training.id)
+    redirect_to trainings_path
   end
   
   private

@@ -19,10 +19,14 @@
    <th>
     <%= link_to bbs_title_path(bbs_title.id) do %>
      <%= attachment_image_tag bbs_title, :image, fallback: "no_image.jpg" %>
+    <% end %>
    </th>
    <th>
-     <%= bbs_title.title %>
-    <% end %>
+    <%= link_to bbs_title_path(bbs_title.id) do %>
+     <h4>
+      <%= bbs_title.title %>
+     </h4>
+     <% end %>
    <% end %>
    </th>
   </tr>

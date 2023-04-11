@@ -1,17 +1,19 @@
-
-      <% @random.each do |training| %>
-      <div class="training-image">
-       <%= attachment_image_tag training, :image %>
-      </div>
-      <br>
-       <h3 class=" training"><%= training.title %></h3><br>
-       <div class="training-menu">
-         <%= training.content %>
-       </div>
-
-      <% end %>
-      <div class="training-btn">
-       <%= link_to "できなかったのでもう一度頑張る！！", root_path,class:"btn btn-danger" %>
-       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-       <%= link_to "できた！！", training_columns_index_path,class:"btn btn-success" %>
-      </div>
+<% @random.each do |training| %>
+ <div class="training-image">
+  <%= attachment_image_tag training, :image %>
+ </div>
+ <br>
+  <h3 class=" training">
+   今日は
+   <%= training.title %>
+   にチャレンジしましょう！！
+  </h3><br>
+   <div class="training-menu">
+    <%= training.content %>
+   </div>
+ <% end %>
+ <div class="training-btn">
+  <%= link_to "できなかったのでもう一度頑張る！！", root_path,class:"btn btn-danger" %>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <%= link_to "できた！！", training_columns_index_path,class:"btn btn-success" %>
+ </div>

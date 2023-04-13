@@ -22,7 +22,7 @@
         <div class="nav-item nav-link"><%= link_to '掲示板へ', bbs_titles_path, class:"link" %></div>
         <div class="nav-item nav-link"><%= link_to 'マイページ', user_path(current_user.id), class:"link" %></div>
         <div class="nav-item nav-link button"><%= button_to "ログアウト", destroy_user_session_path, method: :delete, class:"link" %></div>
-       <% if current_user.id == 1 %>
+       <% if current_user.id == 2 %>
         <div class="nav-item nav-link"><%= link_to"トレーニング追加", new_training_path, class:"link" %></div>
         <div class="nav-item nav-link"><%= link_to"トレーニング一覧", trainings_path, class:"link" %></div>
     　<% end %>

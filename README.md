@@ -1,24 +1,22 @@
-# README
+# 即トレ！
+##サイト概要
+筋トレ初心者の方に向けたサイトです。ジムへ入会したけど何をしたらいいかわからない。そんな悩みを解決するために作りました。ランダムで基本のトレーニングが表示されるので、迷う時間を省いてくれます。また、掲示板機能から質問もできます。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+###サイトテーマ
+筋トレメニューの悩みを解消できるサイト。
 
-Things you may want to cover:
+###テーマを選んだ理由
+私の昔の経験からです。3年前トレーニングを始めた際何をしたらいいかわからず結局しない。ということが数えきれないくらいありました。そんな思いをする人が減ってほしいという気持ちからこのテーマを選びました。
 
-* Ruby version
+###ターゲットユーザ
+筋トレ初心者。
 
-* System dependencies
+###主な利用シーン
+筋トレメニューに迷った時、筋トレの相談をしたい時。
 
-* Configuration
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+###開発環境
+OS：Linux 2(CentOS)
+言語：HTML,CSS,Ruby,SQL
+フレームワーク：Ruby on Rails,bootstrap
+IDE：Cloud9

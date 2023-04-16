@@ -11,12 +11,12 @@
 ### ターゲットユーザ
 筋トレ初心者。
 
-###主な利用シーン
+### 主な利用シーン
 筋トレメニューに迷った時、筋トレの相談をしたい時。
 
 
 ### 開発環境
-OS：Linux 2(CentOS)
-言語：HTML,CSS,Ruby,SQL
-フレームワーク：Ruby on Rails,bootstrap
+OS：Linux 2(CentOS)<br>
+言語：HTML,CSS,Ruby,SQL<br>
+フレームワーク：Ruby on Rails,bootstrap<br>
 IDE：Cloud9

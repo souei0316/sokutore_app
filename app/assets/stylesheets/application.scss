@@ -83,8 +83,13 @@ padding: 60px 15px 0;
 }
 
 .training-image {
-  margin: auto;
   text-align: center;
+  padding-top: 30px;
+}
+
+.training-image img {
+  width: 500px;
+  height: 350px;
 }
 
 .btn-introduction {
@@ -162,6 +167,11 @@ padding: 60px 15px 0;
   height: 300px;
 }
 
+.bbs-image img {
+  width: 400px;
+  height: 280px;
+}
+
 .bbs-table {
   margin: auto;
   width: 1600px;
@@ -209,4 +219,9 @@ padding: 60px 15px 0;
 
 .footer-logo {
   text-align: center;
+}
+
+.profile_image img {
+  width: 400px;
+  height: 300px;
 }

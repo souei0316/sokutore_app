@@ -2,7 +2,7 @@
  <h2>掲示板に投稿する！</h2>
 <%= form_with model: @bbs_title, local:true do |f| %>
   <h5>イメージ画像(なくてもOKです！)</h5>
-   <%= f.attachment_field :image %><br>
+   <%= f.file_field :image %><br>
   <h5>タイトル(30文字以下)</h5>
   <%= f.text_field :title, size: "80x80"%><br><br>
   <%= f.submit '投稿', class: "btn btn-success" %>

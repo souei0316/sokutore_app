@@ -2,7 +2,9 @@
  <h2>
   <%= @user.name %>さんのマイページ<br><br>
   </h2>
-  <%= attachment_image_tag @user, :profile_image, :size =>'400x300', fallback: "no_image.jpg" %><br><br>
+  <div class="profile_image">
+   <%= image_tag @user.profile_image if @user.profile_image.present? %><br><br>
+  </div>
   <% if @user.id == current_user.id %>
    <%= link_to "プロフィール編集", edit_user_path(@user),class:"btn btn-success" %><br><br><br>
   <% end %>
@@ -18,7 +20,9 @@
   <tr>
    <th>
     <%= link_to bbs_title_path(bbs_title.id) do %>
-     <%= attachment_image_tag bbs_title, :image, fallback: "no_image.jpg" %>
+    <div class="training-image">
+     <%= image_tag bbs_title.image, fallback: "no_image.jpg" %>
+    </div>
     <% end %>
    </th>
    <th>

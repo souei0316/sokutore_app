@@ -3,7 +3,7 @@
  <% if current_user.id == 2 %>
   <%= form_with model: @training, local:true do |f| %>
    <h5>画像</h5>
-    <%= f.attachment_field :image %>
+    <%= f.file_field :image %><br>
    <h5>トレーニング名</h5>
     <%= f.text_field :title, size: "60x20" %>
    <h5>説明</h5>

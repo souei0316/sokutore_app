@@ -1,7 +1,7 @@
 <% @random.each do |training| %>
  <div class="training-image">
-  <%= attachment_image_tag training, :image,fallback: "no_image.jpg" %>
- </div>
+  <%= image_tag training.image if training.image.present? %>
+</div>
  <br>
   <h3 class=" training">
    今日は

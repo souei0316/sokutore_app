@@ -1,3 +1,3 @@
 class Training < ApplicationRecord
-  attachment :image
+  has_one_attached :image
 end

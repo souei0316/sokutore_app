@@ -33,7 +33,7 @@
    <th width="500px">
     <%= link_to bbs_title_path(bbs_title.id) do %>
     <div class="bbs-image">
-     <%= attachment_image_tag bbs_title, :image, fallback: "no_image.jpg" %>
+     <%= image_tag bbs_title.image if bbs_title.image.present? %>
     </div>
    <% end %>
   </th>

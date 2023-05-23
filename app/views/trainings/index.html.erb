@@ -3,9 +3,6 @@
  <table class="table table-striped">
    <tr>
      <th>
-       トレーニング画像
-     </th>
-     <th>
        トレーニング名
      </th>
      <th>
@@ -15,11 +12,6 @@
    </tr>
    <% @trainings.each do |training| %>
    <tr>
-     <th width="25">
-      <div class="training-index-image">
-       <%= attachment_image_tag training, :image, fallback: "no_image.jpg" %>
-      </div>
-     </th>
      <th width="25%">
      <h4>
       <%= training.title %>

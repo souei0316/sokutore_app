@@ -76,3 +76,4 @@ group :production do
   gem 'pg'
 end
 gem 'sassc'
+gem "aws-sdk-s3", require: false

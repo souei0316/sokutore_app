@@ -1,15 +1,15 @@
 <div class="top">
-   <h3>
-   即トレ！へようこそ！<br>
-   何の種目をするか迷った際に使ってください。<br>
-   掲示板では筋トレに関する質問や相談がある際に投稿、<br>
-   コメントしてみてください。<br>
-   では良い筋トレライフを！！
-  </h3><br>
+ <h3>
+  即トレ！へようこそ！<br>
+  何の種目をするか迷った際に使ってください。<br>
+  掲示板では筋トレに関する質問や相談がある際に投稿、<br>
+  コメントしてみてください。<br>
+  では良い筋トレライフを！！
+ </h3><br>
 <%= @users.count %>人の方がこのサイトでトレーニングを頑張っています！<br><br>
-  <div class="btn-introduction">
-   下のボタンを押すとランダムで基本の筋トレが一つ表示されます!<br>
-  </div>
+ <div class="btn-introduction">
+  下のボタンを押すとランダムで基本の筋トレが一つ表示されます!<br>
+ </div>
  <div class="training-btn">
- <%= link_to "筋トレを始める！！", training_path(@trainings), class: "btn btn-danger btn-lg" %>
+  <%= link_to "筋トレを始める！！", training_path(@trainings), class: "btn btn-danger btn-lg" %>
 </div>
